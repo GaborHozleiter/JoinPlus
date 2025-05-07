@@ -1,0 +1,27 @@
+<section>
+    <h2>Login</h2>
+    <form [formGroup]="applyForm" (ngSubmit)="submitLogin()">
+        <label for="E-mail">Your E-mail</label>
+        <input type="email" id="email" formControlName="email">
+        <div *ngIf="applyForm.get('email')?.invalid && applyForm.get('email')?.touched">
+            <span>Bitte geben Sie eine gültige E-Mail-Adresse ein.</span>
+        </div>
+
+        <label for="Password">Your Password</label>
+        <input type="password" id="password" formControlName="password">
+        <div *ngIf="applyForm.get('password')?.invalid && applyForm.get('password')?.touched">
+            <span>Bitte geben Sie ein Passwort ein.</span>
+        </div>
+
+        <input type="checkbox" id="rememberMe" formControlName="rememberMe">
+        <label for="rememberMe ">Remember me</label>
+
+        <button type="submit" [disabled]="applyForm.invalid || isLoading">
+            {{ isLoading ? 'Lade...' : 'Login' }}
+        </button>
+    </form>
+    <div>
+        <a routerLink="/forgot-password">Forgot Password?</a>
+        <a routerLink="/register">Create account</a>
+    </div>
+</section>
