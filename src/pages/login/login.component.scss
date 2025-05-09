@@ -13,7 +13,7 @@ form {
     width: 500px;
     height: 350px;
     margin: 2rem;
-    @include center;
+    @include center($g:1rem);
     flex-direction: column
 }
 
