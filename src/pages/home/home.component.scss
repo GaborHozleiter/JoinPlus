@@ -1,0 +1,91 @@
+@import '../../styles.scss';
+
+.home-container {
+  font-family: 'Segoe UI', sans-serif;
+  color: $btn-primary-color-hover;
+  padding: 2rem;
+
+  .header {
+    @include center($jc:space-between);
+    display: flex;
+
+    h1 {
+      font-size: 2rem;
+      color: $btn-primary-color-hover;
+    }
+
+    nav {
+      a {
+        margin-left: 1rem;
+        text-decoration: none;
+        color: $btn-primary-color-hover;
+        font-weight: bold;
+
+        &.primary {
+          color: white;
+          background-color: $btn-primary-color;
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+
+  .hero {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .hero-text {
+      max-width: 500px;
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+
+        .btn {
+          padding: 0.75rem 1.5rem;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: bold;
+          border: 2px solid $btn-primary-color;
+          color: #54a2c1;
+          transition: all 0.3s ease;
+
+          &.primary {
+            background-color: $btn-primary-color;
+            color: white;
+          }
+
+          &:hover {
+            background-color: $btn-primary-color-hover;
+            color: white;
+            border-color: $btn-primary-color-hover;
+          }
+        }
+      }
+    }
+
+    .hero-image {
+      img {
+        max-width: 400px;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
